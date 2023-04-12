@@ -1,0 +1,137 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0c0e15;
+  color: #fff;
+}
+
+.quiz-container h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.quiz-container p {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#start-btn {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 3px solid #fff;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#start-btn:hover {
+  background-color: #fff;
+  color: #0c0e15;
+}
+
+#quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #6c6464c5;
+  color: #0c0e15;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+#question {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.results {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+#true-btn,
+#false-btn,
+#false2-btn {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 2rem;
+  background-color: #0c0e15;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+#true-btn:hover,
+#false-btn:hover,
+#false2-btn:hover {
+  background-color: #fff;
+  color: #0c0e15;
+}
+
+#progress {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+#results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0c0e15;
+  color: #fff;
+}
+
+#score {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 0;
+  padding: 15rem;
+}
+
+#restart-btn {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 3px solid #fff;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#restart-btn:hover {
+  background-color: #fff;
+  color: #0c0e15;
+}
