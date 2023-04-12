@@ -1,8 +1,18 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .quiz-container {
@@ -55,11 +65,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #6c6464c5;
   color: #0c0e15;
   padding: 2rem;
   box-sizing: border-box;
+  width: 100%;
 }
 
 #question {
@@ -69,9 +80,8 @@ body {
 }
 
 .results {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 #true-btn,
@@ -105,19 +115,23 @@ body {
 #results {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 100vh;
   background-color: #0c0e15;
   color: #fff;
+  padding-bottom: 1.8rem;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 #score {
   font-size: 2rem;
   text-align: center;
   margin-top: 0;
-  padding: 15rem;
 }
+
 
 #restart-btn {
   padding: 1rem 2rem;
@@ -129,11 +143,19 @@ body {
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-bottom: 0;
 }
 
 #restart-btn:hover {
   background-color: #fff;
   color: #0c0e15;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;  
+  padding-bottom: 5rem;
 }
 
 @media only screen and (max-width: 300px) {

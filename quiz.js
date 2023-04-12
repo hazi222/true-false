@@ -5,8 +5,12 @@ const questions = [
   "The sun rises in the east and sets in the west.",
   "The human body has 206 bones",
   "The human body has 206 bones",
+  "The sun rises in the east and sets in the west.",
+  "The human body has 206 bones",
+  "The sun rises in the east and sets in the west.",
+  "The human body has 206 bones",
 ];
-const answers = [false, true, false, true, true, true];
+const answers = [false, true, false, true, true, true,true, false, true, true];
 
 const startBtn = document.getElementById("start-btn");
 const quizContainer = document.getElementById("quiz");
@@ -19,16 +23,18 @@ const resultsContainer = document.getElementById("results");
 const scoreEl = document.getElementById("score");
 const restartBtn = document.getElementById("restart-btn");
 const resultBtn = document.getElementById("result-btn");
+const tableBody = document.querySelector("#answers-table tbody");
 
 let currentQuestion = 0;
 let score = 0;
+let userAnswers = [];
 
-quizContainer.style.display = "none"; // hide quiz container
-resultsContainer.style.display = "none"; // hide results container
+quizContainer.style.display = "none";
+resultsContainer.style.display = "none";
 
 startBtn.addEventListener("click", () => {
   quizContainer.style.display = "flex"; // show quiz container
-  document.getElementById("quiz-container").style.display = "none"; // hide welcome container
+  document.querySelector('.quiz-container').style.display = 'none'; // hide welcome container
   startQuiz();
 });
 
@@ -52,6 +58,7 @@ function startQuiz() {
   resultsContainer.style.display = "none";
   currentQuestion = 0;
   score = 0;
+  userAnswers = [];
   showQuestion();
 }
 
@@ -63,6 +70,7 @@ function showQuestion() {
 
 function checkAnswer(answer) {
   const correctAnswer = answers[currentQuestion];
+  userAnswers[currentQuestion] = answer;
   if (answer === correctAnswer) {
     score++;
   }
@@ -78,6 +86,19 @@ function showResults() {
   quizContainer.style.display = "none";
   resultsContainer.style.display = "flex";
   scoreEl.innerText = `You got ${score} out of ${questions.length} questions`;
+  for (let i = 0; i < questions.length; i++) {
+    const tr = document.createElement("tr");
+    const td1 = document.createElement("td");
+    td1.innerText = questions[i];
+    const td2 = document.createElement("td");
+    td2.innerText = userAnswers[i] ? "True" : "False";
+    const td3 = document.createElement("td");
+    td3.innerText = answers[i] ? "True" : "False";
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tableBody.appendChild(tr);
+  }
 }
 
 function restartQuiz() {
@@ -85,5 +106,8 @@ function restartQuiz() {
   score = 0;
   resultsContainer.style.display = "none";
   quizContainer.style.display = "none"; // hide quiz container
-  document.getElementById("quiz-container").style.display = "flex"; // show welcome container
+  document.querySelector('.quiz-container').style.display = 'flex'; // show welcome container
 }
+
+
+
