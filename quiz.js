@@ -73,7 +73,7 @@ function checkAnswer(answer) {
 
 function showResults() {
   quizContainer.style.display = "none";
-  resultsContainer.style.display = "block";
+  resultsContainer.style.display = "flex";
   scoreEl.innerText = `You got ${score} out of ${questions.length} questions`;
 }
 
