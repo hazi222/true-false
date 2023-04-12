@@ -4,13 +4,8 @@ const questions = [
   "The Great Wall of China is visible from space.",
   "The sun rises in the east and sets in the west.",
   "The human body has 206 bones",
-  "The human body has 206 bones",
-  "The sun rises in the east and sets in the west.",
-  "The human body has 206 bones",
-  "The sun rises in the east and sets in the west.",
-  "The human body has 206 bones",
 ];
-const answers = [false, true, false, true, true, true,true, false, true, true];
+const answers = [false, true, false, true, true];
 
 const startBtn = document.getElementById("start-btn");
 const quizContainer = document.getElementById("quiz");
@@ -82,24 +77,50 @@ function checkAnswer(answer) {
   }
 }
 
+function calculateScore() {
+  const percentage = (score / questions.length) * 100;
+  return percentage.toFixed(0);
+}
+
+
 function showResults() {
   quizContainer.style.display = "none";
   resultsContainer.style.display = "flex";
-  scoreEl.innerText = `You got ${score} out of ${questions.length} questions`;
+  const percentage = calculateScore();
+  const scorePercentage = document.createElement("p");
+  resultsContainer.appendChild(scorePercentage);
+  scoreEl.innerText = `You got ${score} out of ${questions.length} questions and got ${percentage} out of 100`;
   for (let i = 0; i < questions.length; i++) {
     const tr = document.createElement("tr");
     const td1 = document.createElement("td");
     td1.innerText = questions[i];
     const td2 = document.createElement("td");
-    td2.innerText = userAnswers[i] ? "True" : "False";
+    const icon = document.createElement("i");
+    icon.classList.add("fas");
+    if (userAnswers[i] === answers[i]) {
+      icon.classList.add("fa-check-circle");
+      icon.style.color = "green";
+    } else {
+      icon.classList.add("fa-times-circle");
+      icon.style.color = "red";
+    }
+    td2.appendChild(icon);
     const td3 = document.createElement("td");
-    td3.innerText = answers[i] ? "True" : "False";
+    td3.innerText = answers[i] ? "true" : "false";
+    if (answers[i]) {
+      td3.style.color = "white";
+    } else {
+      td3.style.color = "white";
+    }
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
     tableBody.appendChild(tr);
   }
 }
+
+
+
 
 function restartQuiz() {
   currentQuestion = 0;
