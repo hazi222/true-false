@@ -68,8 +68,6 @@ body {
   text-align: center;
 }
 
-
-
 .results {
   display: flex;
   justify-content: space-around;
@@ -138,7 +136,7 @@ body {
   color: #0c0e15;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 300px) {
 
   .quiz-container h1 {
     font-size: 3rem;
