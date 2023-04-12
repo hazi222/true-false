@@ -23,9 +23,12 @@ const resultBtn = document.getElementById("result-btn");
 let currentQuestion = 0;
 let score = 0;
 
+quizContainer.style.display = "none"; // hide quiz container
+resultsContainer.style.display = "none"; // hide results container
+
 startBtn.addEventListener("click", () => {
-  quizContainer.style.display = "block"; // show quiz container
-  document.querySelector('.quiz-container').style.display = 'none'; // hide welcome container
+  quizContainer.style.display = "flex"; // show quiz container
+  document.getElementById("quiz-container").style.display = "none"; // hide welcome container
   startQuiz();
 });
 
@@ -82,8 +85,5 @@ function restartQuiz() {
   score = 0;
   resultsContainer.style.display = "none";
   quizContainer.style.display = "none"; // hide quiz container
-  document.querySelector('.quiz-container').style.display = 'flex'; // show welcome container
+  document.getElementById("quiz-container").style.display = "flex"; // show welcome container
 }
-
-
-
